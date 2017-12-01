@@ -104,6 +104,11 @@
             ],
         });
 
-        $('.banner').slick();
+        $('.banner').slick({
+            autoPlay:true,
+            pauseOnHover:true,
+            arrows:true,
+            dots:false,
+        });
   });
 })(jQuery);

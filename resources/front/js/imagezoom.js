@@ -2,8 +2,8 @@
  * ImageZoom Plugin
  * http://0401morita.github.io/imagezoom-plugin
  * MIT licensed
- *
  * Copyright (C) 2014 http://0401morita.github.io/imagezoom-plugin A project by Yosuke Morita
+ * Latest modified by vijay Savakhande 
  */
 (function($){
   var defaults = {
@@ -21,16 +21,13 @@
   var imagezoomCursor,imagezoomView,settings,imageWidth,imageHeight,offset;
   var methods = {
     init : function(options){
-      $this = $(this),        
-      imagezoomCursor = $('.imagezoom-cursor'),
-      imagezoomView = $('.imagezoom-view'),
-      console.log(this);
-      console.log('-----------\n');
-      console.log($this);
-      return false;
-      $(document).on('mouseenter','[data-imagezoom]',function(e){
-        
-        var data = $(this).data();
+      $this = $(this),
+      $('.imagezoom-cursor'),$('.imagezoom-view'),
+      imagezoomCursor ='.imagezoom-cursor' ,
+      imagezoomView = '.imagezoom-view',
+      $this.selector = '[data-imagezoom]',  
+      $(document).on('mouseenter',$this.selector,function(e){            
+        var data = $(this).data();        
         settings = $.extend({},defaults,options,data),
         offset = $(this).offset(),
         imageWidth = $(this).width(),
@@ -51,7 +48,7 @@
           zoomViewPositionX = (offset.left-imageWidth-settings.zoomviewmargin);
         }
 
-        $(imagezoomView.selector).css({
+        $(imagezoomView).css({
           'position':'absolute',
           'left': zoomViewPositionX,
           'top': offset.top,
@@ -63,13 +60,13 @@
           'border': settings.zoomviewborder
         });
 
-        $(imagezoomView.selector).children('img').css({
+        $(imagezoomView).children('img').css({
           'position':'absolute',
           'width': imageWidth*settings.magnification,
           'height': imageHeight*settings.magnification,
         });
 
-        $(imagezoomCursor.selector).css({
+        $(imagezoomCursor).css({
           'position':'absolute',
           'width':cursorSize[0],
           'height':cursorSize[1],
@@ -78,15 +75,15 @@
           'opacity':settings.opacity,
           'cursor':settings.cursor
         });
-        $(imagezoomCursor.selector).css({'top':posY-(cursorSize[1]/2),'left':posX});
+        $(imagezoomCursor).css({'top':posY-(cursorSize[1]/2),'left':posX});
         $(document).on('mousemove',document.body,methods.cursorPos);
       });
     },
     cursorPos:function(e){
       var posX = e.pageX,posY = e.pageY;
       if(posY < offset.top || posX < offset.left || posY > (offset.top+imageHeight) || posX > (offset.left+imageWidth)){
-        $(imagezoomCursor.selector).remove();
-        $(imagezoomView.selector).remove();
+        $(imagezoomCursor).remove();
+        $(imagezoomView).remove();
         return;
       }
 
@@ -102,10 +99,10 @@
         posY = (offset.top+imageHeight)-(cursorSize[1]/2);
       }
 
-      $(imagezoomCursor.selector).css({'top':posY-(cursorSize[1]/2),'left':posX-(cursorSize[0]/2)});
-      $(imagezoomView.selector).children('img').css({'top':((offset.top-posY)+(cursorSize[1]/2))*settings.magnification,'left':((offset.left-posX)+(cursorSize[0]/2))*settings.magnification});
+      $(imagezoomCursor).css({'top':posY-(cursorSize[1]/2),'left':posX-(cursorSize[0]/2)});
+      $(imagezoomView).children('img').css({'top':((offset.top-posY)+(cursorSize[1]/2))*settings.magnification,'left':((offset.left-posX)+(cursorSize[0]/2))*settings.magnification});
 
-      $(imagezoomCursor.selector).mouseleave(function(){
+      $(imagezoomCursor).mouseleave(function(){
         $(this).remove();
       });
     }

@@ -901,10 +901,14 @@ ul.multi-column-dropdown h6 {
 }
 /*-- slick-slider --*/
 /* Default Skin */
-
+.slick-dots{
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .slick-dots li {
     float: left;
-    margin: 0 8px 0 0;
+    margin:2em 0;
     list-style-type: none;
 }
 .slick-dots li button {
@@ -927,6 +931,21 @@ ul.multi-column-dropdown h6 {
     -o-box-shadow: 0px 0px 10px #1A1A1A;
     -ms-box-shadow: 0px 0px 10px #1A1A1A;
 }
+.banner .slick-prev{
+    left:25px;
+    z-index:100;  
+}
+.banner .slick-next{
+    right:45px;
+    z-index:100;  
+}
+.slick-prev:before {
+	content: url('../img/left-arrow.png');
+}
+.slick-next:before {
+	content: url('../img/right-arrow.png');
+}
+
 /* Default Skin */
 .wmuGallery .wmuGalleryImage {
     margin-bottom: 10px;
@@ -2169,7 +2188,7 @@ h2.typoh2{
 .contact-left h4{
     font-size: 1.5em;
     color:#ff9b05;
-    margin:0 0 1em;
+    margin:1em 0 1em;
 }
 .contact-left p{
     color: #999;
@@ -2185,17 +2204,17 @@ h2.typoh2{
     padding:1em 0 0;
     margin:0;
 }
-.contact-left ul li{
+.contact-left ul.address li{
     list-style-type: none;
     margin: 0 0 1em;
     font-size: 14px;
     color: #999;
 }
-.contact-left ul li a{
+.contact-left ul.address li a{
     color:#999;
     text-decoration:none;
 }
-.contact-left ul li a:hover{
+.contact-left ul.address li a:hover{
     color:#ff9b05;
 }
 .contact-left input[type="text"],.contact-left input[type="email"],.contact-left textarea{
@@ -2236,6 +2255,10 @@ h2.typoh2{
 }
 .contact-left input[type="submit"]:hover{
     background:#ff9b05;
+}
+.contact-left .form-error ul{
+    margin:0 0 0 20px;
+    padding:0px;
 }
 .contact-bottom{
     margin:3em 0 0;

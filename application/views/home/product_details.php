@@ -23,14 +23,14 @@
 		<div class="container">
 			<div class="col-md-4 single-left">
 				<div class="flexslider slider-for">
-            <div class="thumb-image"><img src="<?php print site_url('resources/front/img/a.jpg');?>"  data-imagezoom="true"  class="img-responsive"> </div>         
-            <div class="thumb-image"> <img src="<?php print site_url('resources/front/img/b.jpg');?>"  data-imagezoom="true"  class="img-responsive"> </div>
-            <div class="thumb-image"> <img src="<?php print site_url('resources/front/img/c.jpg');?>"  data-imagezoom="true"  class="img-responsive"> </div>
+            <div class="thumb-image"><img src="<?php print site_url('resources/front/img/a.jpg');?>" data-imagezoom="true"  class="img-responsive"></div>         
+            <div class="thumb-image"><img src="<?php print site_url('resources/front/img/b.jpg');?>" data-imagezoom="true"  class="img-responsive"> </div>
+            <div class="thumb-image"><img src="<?php print site_url('resources/front/img/c.jpg');?>" data-imagezoom="true"  class="img-responsive"> </div>
 				</div>
 				<div class="slider slider-nav">
-            <div class=""><img src="<?php print site_url('resources/front/img/a.jpg');?>" class="img-responsive"> </div>         
-            <div class=""> <img src="<?php print site_url('resources/front/img/b.jpg');?>" class="img-responsive"> </div>
-            <div class=""> <img src="<?php print site_url('resources/front/img/c.jpg');?>" class="img-responsive"> </div>
+            <div class="thumb-image"><img src="<?php print site_url('resources/front/img/a.jpg');?>" class="img-responsive"> </div>         
+            <div class="thumb-image"> <img src="<?php print site_url('resources/front/img/b.jpg');?>" class="img-responsive"> </div>
+            <div class="thumb-image"> <img src="<?php print site_url('resources/front/img/c.jpg');?>" class="img-responsive"> </div>
 				</div>
 			</div>
 			<div class="col-md-8 single-right">
